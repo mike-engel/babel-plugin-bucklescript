@@ -33,6 +33,7 @@ If, however, you want to compile to `amdjs` or `es6`, you can pass that in as an
     ["babel-plugin-bucklescript", { "module": "es6" }]
   ]
 }
+```
 
 Finally, you'll want to add a `bsconfig.json` file in the root of your project. Note that by default, `bsb` will compile to a folder called `lib` in the root of your project, no matter where your source code is. Take that into account when building your project. As of right now, this plugin only supports that compilation directory.
 
