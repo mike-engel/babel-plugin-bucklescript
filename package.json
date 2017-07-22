@@ -1,12 +1,12 @@
 {
   "name": "babel-plugin-bucklescript",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Write ReasonML and Bucklescript in your existing babel projects",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel --presets=es2015,stage-0 index.js -d dist/",
     "precommit": "lint-staged",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,27 @@
     "babel-preset-stage-0": "^6.24.1",
     "bs-platform": "^1.8.1",
     "husky": "^0.14.3",
+    "jest": "^20.0.4",
     "lint-staged": "^4.0.2",
     "prettier": "^1.5.3"
   },
   "lint-staged": {
     "*.js": ["prettier --write", "git add"]
+  },
+  "babel": {
+    "presets": ["es2015", "stage-0"]
+  },
+  "dependencies": {
+    "debug": "^2.6.8"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   }
 }
