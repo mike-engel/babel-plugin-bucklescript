@@ -3,6 +3,7 @@ Thumbs.db
 
 node_modules
 .vscode
+examples
 
 *.orig
 *.log

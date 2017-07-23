@@ -1,3 +1,9 @@
+# 0.2.1
+> 2017-07-23
+
+#### Bug fixes
+- The compiled file should now be included in the published module. Sorry about that!
+
 # 0.2.0
 > 2017-07-22
 
