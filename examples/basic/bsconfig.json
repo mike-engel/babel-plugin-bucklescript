@@ -1,0 +1,5 @@
+{
+  "name": "basic-example",
+  "sources": ["."],
+  "package-specs": ["commonjs"]
+}

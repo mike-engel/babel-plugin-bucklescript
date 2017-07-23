@@ -1,3 +1,16 @@
+# 0.2.2
+> 2017-07-24
+
+#### New features
+- `bsb` won't be set to watch mode if `-w` or `--watch` is not present in the cli command
+- Basic and ReasonReact examples have been added
+
+#### Bug fixes
+- Fixed a bug where `[Object object]` was printed instead of the correct path for `import` statements
+
+#### TODO
+- Test this out with several different project setups and gather dev feedback
+
 # 0.2.1
 > 2017-07-23
 

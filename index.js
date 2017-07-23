@@ -4,6 +4,8 @@ import { execFileSync, spawn } from "child_process";
 import { StringLiteral } from "babel-types";
 
 const debug = debugConstructor("babel-plugin-bucklescript");
+const watching =
+  process.argv.indexOf("-w") + process.argv.indexOf("--watch") >= -1;
 const globalPath = process.cwd();
 const compileDir = "lib";
 const fileRegex = /\.(re|ml)$/;
@@ -17,14 +19,16 @@ try {
   bsb = "bsb";
 }
 
-debug("Spawning bsb watch process");
+debug(`Spawning bsb ${watching ? "watch " : "make world"}process`);
 
-const watcher = spawn(bsb, ["-w"], { stdio: ["ignore", "pipe", "pipe"] });
+const watcher = spawn(bsb, [watching ? "-w" : "-make-world"]);
 
 /* istanbul ignore next */
 process.on("exit", () => {
-  debug("Terminating bsb watch process");
-  watcher.kill();
+  if (watching) {
+    debug("Terminating bsb process");
+    watcher.kill();
+  }
 });
 
 export const isBuckleScriptFile = path => {
@@ -57,7 +61,7 @@ export const getNewPath = (path, state) => {
   return newPath.replace(fileRegex, ".js");
 };
 
-export default ({ types: t }) => {
+export default babel => {
   return {
     visitor: {
       CallExpression(path, state) {
@@ -74,7 +78,7 @@ export default ({ types: t }) => {
 
         debug("Call expression has at least one argument");
 
-        const firstArg = traverseExpression(t, args[0]);
+        const firstArg = traverseExpression(babel.types, args[0]);
 
         /* istanbul ignore next */
         if (!firstArg) return;
@@ -90,7 +94,9 @@ export default ({ types: t }) => {
         debug(`Setting new path: "${newPath}"`);
 
         path.replaceWith(
-          t.callExpression(path.node.callee, [t.stringLiteral(newPath)])
+          babel.types.callExpression(path.node.callee, [
+            babel.types.stringLiteral(newPath)
+          ])
         );
       },
       ImportDeclaration(path, state) {
@@ -105,7 +111,10 @@ export default ({ types: t }) => {
         debug(`Setting new path: "${newPath}"`);
 
         path.replaceWith(
-          t.importDeclaration(path.node.specifiers, t.stringLiteral(newPath))
+          babel.types.importDeclaration(
+            path.node.specifiers,
+            babel.types.stringLiteral(newPath)
+          )
         );
       }
     }

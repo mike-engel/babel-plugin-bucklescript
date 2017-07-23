@@ -1,9 +1,11 @@
 .DS_Store
 Thumbs.db
 
-node_modules
-dist
-coverage
+node_modules/
+dist/
+coverage/
+bs/
 
 *.orig
 *.log
+.merlin
