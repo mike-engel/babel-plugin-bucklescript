@@ -19,8 +19,10 @@ try {
   bsb = "bsb";
 }
 
+/* istanbul ignore next */
 debug(`Spawning bsb ${watching ? "watch " : "make world"}process`);
 
+/* istanbul ignore next */
 const watcher = spawn(bsb, [watching ? "-w" : "-make-world"]);
 
 /* istanbul ignore next */
