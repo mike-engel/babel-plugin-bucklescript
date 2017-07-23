@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-bucklescript",
-  "version": "0.2.1",
+  "version": "0.2.2-0",
   "description": "Write ReasonML and Bucklescript in your existing babel projects",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/mike-engel/babel-plugin-bucklescript.git"
   },
-  "keywords": ["bucklescript", "babel", "reasonml", "plugin"],
+  "keywords": [
+    "bucklescript",
+    "babel",
+    "reasonml",
+    "plugin"
+  ],
   "author": "Mike Engel <mike@mike-engel.com>",
   "license": "MIT",
   "bugs": {
@@ -31,10 +36,16 @@
     "prettier": "^1.5.3"
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "babel": {
-    "presets": ["es2015", "stage-0"]
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
   },
   "dependencies": {
     "debug": "^2.6.8"
