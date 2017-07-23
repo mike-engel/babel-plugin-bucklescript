@@ -89,7 +89,9 @@ export default ({ types: t }) => {
 
         debug(`Setting new path: "${newPath}"`);
 
-        path.node.arguments = [t.stringLiteral(newPath)];
+        path.replaceWith(
+          t.callExpression(path.node.callee, [t.stringLiteral(newPath)])
+        );
       },
       ImportDeclaration(path, state) {
         debug("Evaluating import declaration");
@@ -102,7 +104,9 @@ export default ({ types: t }) => {
 
         debug(`Setting new path: "${newPath}"`);
 
-        path.node.source.value = t.stringLiteral(newPath);
+        path.replaceWith(
+          t.importDeclaration(path.node.specifiers, t.stringLiteral(newPath))
+        );
       }
     }
   };

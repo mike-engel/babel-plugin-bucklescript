@@ -36,7 +36,7 @@ it("should contain the correct paths", () => {
   const { ast } = babel.transform(exampleFile, { plugins: [plugin] });
   const program = ast.program;
   const body = program.body;
-  const importPath = body[0].source.value.value;
+  const importPath = body[0].source.value;
   const requirePath = body[1].declarations[0].init.arguments[0].value;
 
   expect(/\.js$/.test(importPath)).toBeTruthy;
