@@ -23,7 +23,7 @@ try {
 debug(`Spawning bsb ${watching ? "watch " : "make world"}process`);
 
 /* istanbul ignore next */
-const watcher = spawn(bsb, [watching ? "-w -make-world" : "-make-world"]);
+const watcher = spawn(bsb, watching ? ["-w", "-make-world"] : ["-make-world"]);
 
 /* istanbul ignore next */
 process.on("exit", () => {
