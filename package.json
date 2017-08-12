@@ -20,6 +20,9 @@
     "plugin"
   ],
   "author": "Mike Engel <mike@mike-engel.com>",
+  "contributors": [
+    "Nor145 <https://github.com/Nor145>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mike-engel/babel-plugin-bucklescript/issues"

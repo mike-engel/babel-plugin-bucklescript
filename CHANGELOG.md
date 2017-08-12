@@ -1,3 +1,15 @@
+# 0.2.4
+> 2017-08-11
+
+#### Bug fixes
+- Fixes the spawn args for bsb [(#2)](https://github.com/mike-engel/babel-plugin-bucklescript/pull/2)
+
+# 0.2.3
+> 2017-07-24
+
+#### Bug fixes
+- Adds a prepublish script so I don't forget to build before publishing
+
 # 0.2.2
 > 2017-07-24
 
