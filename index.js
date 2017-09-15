@@ -12,10 +12,10 @@ const fileRegex = /\.(re|ml)$/;
 
 let bsb;
 
-/* istanbul ignore next */
 try {
   bsb = require.resolve("bs-platform/bin/bsb.exe");
 } catch (_) {
+  /* istanbul ignore next */
   bsb = "bsb";
 }
 
@@ -28,19 +28,23 @@ const watcher = spawn(bsb, watching ? ["-w", "-make-world"] : ["-make-world"]);
 /* istanbul ignore next */
 process.on("exit", () => {
   if (watching) {
+    /* istanbul ignore next */
     debug("Terminating bsb process");
     watcher.kill();
   }
 });
 
 export const isBuckleScriptFile = path => {
+  /* istanbul ignore next */
   debug(`Checking if the file is a bs file: " ${path}"`);
   return fileRegex.test(path);
 };
 
 export const traverseExpression = (t, arg) => {
+  /* istanbul ignore next */
   debug("Traversing the AST expression");
   if (t.isStringLiteral(arg)) {
+    /* istanbul ignore next */
     debug("AST expression is a string");
     return arg;
   }
