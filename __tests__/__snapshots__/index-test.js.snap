@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`compiles ok 1`] = `
-"import test from \\"/Users/mike/projects/babel-plugin-bucklescript/lib/js/test.js\\";
+"import test from \\"<PROJECT_ROOT>/lib/js/test.js\\";
 
-const yolo = require(\\"/Users/mike/projects/babel-plugin-bucklescript/lib/js/components/yolo.js\\");
+const yolo = require(\\"<PROJECT_ROOT>/lib/js/components/yolo.js\\");
 import ignore from \\"./ignore.js\\";
 const ignoreRequire = require(\\"./components/ignore.js\\");
 
