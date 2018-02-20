@@ -13,7 +13,7 @@ const fileRegex = /\.(re|ml)$/;
 let bsb;
 
 try {
-  bsb = require.resolve("bs-platform/bin/bsb.exe");
+  bsb = require.resolve("bs-platform/lib/bsb.exe");
 } catch (_) {
   /* istanbul ignore next */
   bsb = "bsb";
