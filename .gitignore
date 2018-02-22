@@ -2,9 +2,9 @@
 Thumbs.db
 
 node_modules/
-dist/
 coverage/
 bs/
+.idea/
 
 *.orig
 *.log
