@@ -24,7 +24,7 @@ const typesStub = {
 };
 
 const createSourceFile = filename => {
-  return { file: { opts: { filenameRelative: filename } }, opts: {} };
+  return { file: { opts: { filename: filename } }, opts: {} };
 };
 
 it("compiles ok", () => {
