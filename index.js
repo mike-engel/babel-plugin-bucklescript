@@ -59,7 +59,7 @@ export const getModuleType = state => {
 
 export const getNewPath = (path, state) => {
   debug("Generating new path");
-  const sourcePath = dirname(state.file.opts.filenameRelative);
+  const sourcePath = dirname(state.file.opts.filename);
   const requirePath = resolve(sourcePath, path);
   const rootPath = requirePath.replace(globalPath, "");
   const newPath = join(globalPath, compileDir, getModuleType(state), rootPath);
