@@ -1,3 +1,21 @@
+# 0.4.0
+> 2018-04-24
+
+#### Breaking changes
+- Updates the plugin for babel v7 compat [#6](https://github.com/mike-engel/babel-plugin-bucklescript/pull/6)
+
+# 0.3.1
+> 2018-02-22
+
+#### Bug fixes
+- Included the built file with the package on npm
+
+# 0.3.0
+> 2018-02-22
+
+#### Breaking changes
+- Updated the path for bsb on windows [#5](https://github.com/mike-engel/babel-plugin-bucklescript/pull/5)
+
 # 0.2.4
 > 2017-08-11
 
