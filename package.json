@@ -30,15 +30,15 @@
   "homepage": "https://github.com/mike-engel/babel-plugin-bucklescript#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "bs-platform": "^1.9.1",
-    "husky": "^0.14.3",
-    "jest": "^21.1.0",
-    "jest-serializer-path": "^0.1.3",
-    "lint-staged": "^4.1.3",
-    "prettier": "^1.7.0"
+    "bs-platform": "^4.0.6",
+    "husky": "^1.1.0",
+    "jest": "^23.6.0",
+    "jest-serializer-path": "^0.1.15",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
   },
   "lint-staged": {
     "*.js": [
@@ -53,7 +53,7 @@
     ]
   },
   "dependencies": {
-    "debug": "^3.0.1"
+    "debug": "^4.0.1"
   },
   "jest": {
     "coverageThreshold": {

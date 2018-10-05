@@ -1,3 +1,12 @@
+# 0.5.0
+> 2018-10-04
+
+#### Breaking changes
+- Update bs-platform to 4.0.0
+
+#### Bug fixes
+- Update dependencies
+
 # 0.4.0
 > 2018-04-24
 
