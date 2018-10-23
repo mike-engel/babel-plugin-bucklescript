@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-bucklescript",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Write ReasonML and Bucklescript in your existing babel projects",
   "main": "dist/index.js",
   "scripts": {
